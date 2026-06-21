@@ -23,6 +23,7 @@ def dashboard_admin():
             ORDER BY a.jam DESC
         """
         df_harian = pd.read_sql_query(query_harian, conn)
+        df_harian.index = range(1, len(df_harian) + 1)
         st.dataframe(df_harian, use_container_width=True)
         
         if not df_harian.empty:
@@ -57,6 +58,8 @@ def dashboard_admin():
             df_rekap['Total_Tidak_Hadir'] = total_hari_aktif - df_rekap['Total_Hadir']
         else:
             df_rekap['Total_Tidak_Hadir'] = 0
+
+        df_rekap.index = range(1, len(df_rekap) + 1)
             
         st.dataframe(df_rekap, use_container_width=True)
         
