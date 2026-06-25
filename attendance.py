@@ -3,7 +3,7 @@ from datetime import datetime
 from database import get_connection
 
 def portal_mahasiswa():
-    st.title("🎓 Portal Absensi Mahasiswa")
+    st.title("🟦 Portal Absensi Mahasiswa")
     st.write("Silakan login menggunakan NIM dan Nama lengkap Anda untuk melakukan absensi.")
     
     with st.form("form_absensi"):
